@@ -29,10 +29,10 @@ class CgalConan(ConanFile):
     def requirements(self):
         self.requires("boost/[>=1.67]")
         if self.options.with_gmp:
-            self.requires("gmp/[>=5.0]")
-            self.requires("mpfr/[>=3.0]")
+            self.requires("gmp/[>=5.0]@CHM/dev")
+            self.requires("mpfr/[>=3.0]@CHM/dev")
         if self.options.with_tbb:
-            self.requires("tbb/2019_u9")
+            self.requires("tbb/2019_u9@CHM/dev")
 
     def build(self):
         with tools.environment_append(self.cmake_env_vars):
