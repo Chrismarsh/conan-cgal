@@ -27,7 +27,7 @@ class CgalConan(ConanFile):
     }
 
     def requirements(self):
-        self.requires("boost/[>=1.67]")
+        self.requires("boost/[>=1.67]@CHM/dev")
         if self.options.with_gmp:
             self.requires("gmp/[>=5.0]@CHM/dev")
             self.requires("mpfr/[>=3.0]@CHM/dev")
