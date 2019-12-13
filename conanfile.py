@@ -38,6 +38,7 @@ class CgalConan(ConanFile):
         with tools.environment_append(self.cmake_env_vars):
             cmake = CMake(self)
             cmake.definitions["BOOST_ROOT"] = self.deps_cpp_info["boost"].rootpath
+            cmake.definitions["BOOST_LIBRARYDIR"] = self.deps_cpp_info["boost"].rootpath
             cmake.definitions["CGAL_DISABLE_GMP"] = "OFF" if self.options.with_gmp else "ON"
             cmake.definitions["WITH_CGAL_Qt5"] = "OFF" if self.options.with_qt5 else "ON"
             cmake.definitions["WITH_CGAL_ImageIO"] = "OFF" if self.options.with_imageio else "ON"
