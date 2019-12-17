@@ -1,5 +1,5 @@
 from conans import ConanFile, CMake
-from pathlib import Path
+
 
 
 class CgalTestConan(ConanFile):
@@ -16,4 +16,4 @@ class CgalTestConan(ConanFile):
         self.copy("*.so*", dst="bin", src="lib")
 
     def test(self):
-        self.run(str(Path("bin").joinpath("example")))
+        self.run("./bin/example")
