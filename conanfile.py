@@ -24,8 +24,8 @@ class CgalConan(ConanFile):
         "type": "git",
         "url": "https://github.com/cgal/cgal.git",
         "revision": "releases/CGAL-5.0"
-    }
-
+    } 
+    generators = "cmake_find_package"
     def requirements(self):
         self.requires("boost/[>=1.67]@CHM/stable")
         if self.options.with_gmp:
@@ -33,6 +33,7 @@ class CgalConan(ConanFile):
             self.requires("mpfr/[>=3.0]@CHM/stable")
         if self.options.with_tbb:
             self.requires("tbb/2019_u9@CHM/stable")
+
 
     def build(self):
         with tools.environment_append(self.cmake_env_vars):
@@ -44,7 +45,6 @@ class CgalConan(ConanFile):
             cmake.definitions["WITH_CGAL_ImageIO"] = "OFF" if self.options.with_imageio else "ON"
             cmake.definitions["CGAL_HEADER_ONLY"] = "ON" if self.options.header_only else "OFF"
             cmake.definitions["CMAKE_POSITION_INDEPENDENT_CODE"] = "True"
-
 
             cmake.configure()
             cmake.build()
