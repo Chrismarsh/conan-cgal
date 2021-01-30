@@ -32,7 +32,7 @@ class CgalConan(ConanFile):
         os.rename("cgal-{}".format(self.version), 'cgal')
 
     def requirements(self):
-        self.requires("boost/[>=1.67]@CHM/stable")
+        self.requires("boost/[>=1.70]@CHM/stable")
         if self.options.with_gmp:
             self.requires("gmp/[>=5.0]@CHM/stable")
             self.requires("mpfr/[>=3.0]@CHM/stable")
