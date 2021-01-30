@@ -17,7 +17,13 @@ class CgalConan(ConanFile):
                 "with_tbb":[True,False],
                 "with_boost_mp":[True,False]
                 }                
-    default_options = "shared=False", "with_gmp=True", "with_qt5=False", "with_imageio=False","header_only=True","with_tbb=True","with_boost_mp=True"
+    default_options = {"shared":False,
+     "with_gmp": True, 
+     "with_qt5": False,
+      "with_imageio": False,
+      "header_only" : True,
+      "with_tbb": True,
+      "with_boost_mp": True}
 
     generators = "cmake_find_package"
   
