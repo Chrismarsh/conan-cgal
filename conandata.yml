@@ -1,0 +1,5 @@
+sources:
+  "5.0":
+    url: "https://github.com/CGAL/cgal/archive/releases/CGAL-5.0.tar.gz"
+  "5.2":
+    url: "https://github.com/CGAL/cgal/archive/v5.2.tar.gz"

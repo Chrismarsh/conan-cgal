@@ -1,15 +1,11 @@
-# conan-cgal
+# cgal
 
-## Create package localy
+This is a minimal Conan build of the cgal library for use with [CHM](https://github.com/Chrismarsh/CHM). 
 
-Without GMP/MPFR
+Build artifacts are uploaded to [Bintray](https://bintray.com/chrismarsh/CHM)
 
-`conan create . grif/dev`
 
-With GMP/MPFR
+```
+conan install cgal/5.0.0@CHM/stable
+```
 
-`conan create . grif/dev -o cgal:with_gmp=True`
-
-Note: only shared gmp/mpfr working on Windows so far
-
-`conan create . grif/dev -o cgal:with_gmp=True -o gmp:shared=True -o mpfr:shared=True`
