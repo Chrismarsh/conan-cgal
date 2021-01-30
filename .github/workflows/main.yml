@@ -74,7 +74,7 @@ jobs:
         run: |
           python build.py
         env:
-          CONAN_CURRENT_PAGE: ${{matrix.cfg.compiler}}_shared
+          CONAN_CURRENT_PAGE: ${{matrix.cfg.compiler}} #no shared, header only!
           CONAN_REFERENCE: cgal/${{ matrix.lib-version}}
 
 

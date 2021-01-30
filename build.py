@@ -7,7 +7,7 @@ if __name__ == "__main__":
                                 build_types=["Release"])
                               
     builder.add_common_builds(pure_c=False,
-                                header_only=True)
+                              shared_option_name=False)
 
     builder.remove_build_if(lambda build: build.settings["compiler.libcxx"] == "libstdc++")
 
