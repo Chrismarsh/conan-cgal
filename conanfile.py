@@ -40,9 +40,10 @@ class CgalConan(ConanFile):
             self.requires("tbb/[>=2019.9]@CHM/stable")
 
     def configure_cmake(self):
-        cmake = CMake(self)
-        cmake.configure(source_folder="cgal")
-        return cmake
+        with tools.environment_append(self.cmake_env_vars):
+            cmake = CMake(self)
+            cmake.configure(source_folder="cgal")
+            return cmake
 
     def build(self):
         cmake = self.configure_cmake()
